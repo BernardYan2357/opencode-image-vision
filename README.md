@@ -1,6 +1,10 @@
 # opencode-image-vision
 
 [![中文 README](https://img.shields.io/badge/中文-README-2ea44f)](README.zh.md)
+[![npm](https://img.shields.io/npm/v/opencode-image-vision)](https://www.npmjs.com/package/opencode-image-vision)
+[![downloads](https://img.shields.io/npm/dm/opencode-image-vision)](https://www.npmjs.com/package/opencode-image-vision)
+[![license](https://img.shields.io/github/license/BernardYan2357/opencode-image-vision)](./LICENSE)
+[![node](https://img.shields.io/node/v/opencode-image-vision)](https://www.npmjs.com/package/opencode-image-vision)
 
 Provides image description and OCR text recognition for AI models that do not support image/PDF input, with support for reading images from file paths and the clipboard.
 

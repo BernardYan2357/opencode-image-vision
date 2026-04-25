@@ -1,6 +1,10 @@
 # opencode-image-vision
 
 [![English README](https://img.shields.io/badge/English-README-2ea44f)](README.md)
+[![npm](https://img.shields.io/npm/v/opencode-image-vision)](https://www.npmjs.com/package/opencode-image-vision)
+[![downloads](https://img.shields.io/npm/dm/opencode-image-vision)](https://www.npmjs.com/package/opencode-image-vision)
+[![license](https://img.shields.io/github/license/BernardYan2357/opencode-image-vision)](./LICENSE)
+[![node](https://img.shields.io/node/v/opencode-image-vision)](https://www.npmjs.com/package/opencode-image-vision)
 
 为不支持图片/PDF 输入的 AI 模型提供图像描述与OCR 文字识别，支持文件路径读取图片与剪贴板读取图片
 
