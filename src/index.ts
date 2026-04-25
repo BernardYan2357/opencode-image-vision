@@ -825,6 +825,11 @@ export const ImageVisionPlugin: Plugin = async (ctx, options?: PluginOptions) =>
   // 构建 hooks
   const hooks: any = {}
 
+  // ====== 路由层清理：SiliconFlow 等兼容 Provider 不支持 eager_input_streaming ======
+  hooks["chat.params"] = async (_input: any, output: any) => {
+    output.options.toolStreaming = false
+  }
+
   // ====== Tool Hook: read 拦截 ======
   if (visionConfig) {
     hooks["tool.execute.before"] = async (input: any, output: any) => {
@@ -839,8 +844,8 @@ export const ImageVisionPlugin: Plugin = async (ctx, options?: PluginOptions) =>
         const isPdf = isPdfPath(filePath)
         if (!isImg && !isPdf) return
 
-        // PDF 启用检查
-        if (isPdf && !visionConfig.enabledForPdf) return
+        // PDF 启用检查（默认启用，只有显式 false 才禁用）
+        if (isPdf && visionConfig.enabledForPdf === false) return
 
         // 自动跳过支持视觉的模型
         if (!visionConfig.forceDescription) {
@@ -972,4 +977,9 @@ export const ImageVisionPlugin: Plugin = async (ctx, options?: PluginOptions) =>
   }
 
   return hooks
+}
+
+export default {
+  id: "opencode-image-vision",
+  server: ImageVisionPlugin,
 }

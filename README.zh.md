@@ -49,13 +49,6 @@ npm install opencode-image-vision
 }
 ```
 
-将 SKILL.md 复制到 opencode skills 目录：
-
-```bash
-mkdir -p ~/.config/opencode/skills/read-ocr
-cp path/to/opencode-image-vision/skills/read-ocr/SKILL.md ~/.config/opencode/skills/read-ocr/
-```
-
 ### Vision Provider 配置示例
 
 #### Custom（OpenAI 兼容 API）
@@ -182,5 +175,10 @@ flowchart TD
 ### 首次读取慢
 
 模型冷启动 10-30 秒，插件初始化时会预热。
+
+### 插件看起来没生效
+
+如果当前主模型本身支持视觉能力，插件会自动跳过图片/PDF 拦截。
+如需强制走插件处理，请在插件配置中设置 `vision.forceDescription: true`。
 
 ## [License](./LICENSE)

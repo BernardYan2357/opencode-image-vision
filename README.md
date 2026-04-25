@@ -49,13 +49,6 @@ Configure in `~/.config/opencode/opencode.json`:
 }
 ```
 
-Copy SKILL.md to the opencode skills directory:
-
-```bash
-mkdir -p ~/.config/opencode/skills/read-ocr
-cp path/to/opencode-image-vision/skills/read-ocr/SKILL.md ~/.config/opencode/skills/read-ocr/
-```
-
 ### Vision Provider Configuration Examples
 
 #### Custom (OpenAI-compatible API)
@@ -182,5 +175,10 @@ Check whether `apiKey` is configured correctly, or whether the `apiKeyEnv` envir
 ### First Read Is Slow
 
 Model cold start takes 10-30 seconds; the plugin performs warm-up during initialization.
+
+### Plugin seems inactive on image/PDF
+
+If your current main model already supports vision, the plugin will auto-skip image/PDF interception.
+To force plugin processing, set `vision.forceDescription: true` in your plugin config.
 
 ## [License](./LICENSE)

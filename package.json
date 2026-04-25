@@ -1,9 +1,13 @@
 {
   "name": "opencode-image-vision",
-  "version": "1.0.0",
+  "version": "1.0.6",
+  "type": "module",
   "description": "Image vision, OCR, and clipboard support for OpenCode - enables vision models for models that don't support image input",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    "./server": "./dist/index.js"
+  },
   "keywords": [
     "opencode",
     "opencode-plugin",
