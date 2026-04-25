@@ -1,0 +1,32 @@
+{
+  "name": "opencode-image-vision",
+  "version": "1.0.0",
+  "description": "Image vision, OCR, and clipboard support for OpenCode - enables vision models for models that don't support image input",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "keywords": [
+    "opencode",
+    "opencode-plugin",
+    "image",
+    "vision",
+    "ocr",
+    "clipboard",
+    "pdf"
+  ],
+  "peerDependencies": {
+    "@opencode-ai/plugin": ">=1.14.0"
+  },
+  "dependencies": {
+    "openai": "^4.95.0",
+    "pdf-parse": "^1.1.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0"
+  },
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "license": "MIT"
+}
