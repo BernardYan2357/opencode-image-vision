@@ -296,18 +296,18 @@ function setCache(absPath: string, mtime: number, description: string): void {
 
 let sharedOpenAIClient: OpenAI | null = null
 
-function getOpenAIClient(config: { apiKey?: string; baseUrl?: string }): OpenAI {
+function getOpenAIClient(config: { apiKey?: string; baseUrl?: string; provider: string }): OpenAI {
   if (sharedOpenAIClient) return sharedOpenAIClient
-  
+
   const apiKey = getApiKey(config)
   const baseUrl = getBaseUrl(config)
-  
+
   sharedOpenAIClient = new OpenAI({
     apiKey: apiKey || "unused",
     baseURL: baseUrl || undefined,
     timeout: VISION_API_TIMEOUT,
   })
-  
+
   return sharedOpenAIClient
 }
 
